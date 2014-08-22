@@ -34,18 +34,18 @@ import fitbit.client.http.HttpClient;
 /**
  * @author Yusuke Yamamoto - yusuke at mac.com
  */
-class FitbitAPIClientSupport {
+class FitbitApiClientSupport {
     protected Log log = LogFactory.getLog(getClass());
 
     protected HttpClient http = new HttpClient();
     protected String source = Configuration.getSource();
     protected final boolean USE_SSL;
 
-    public FitbitAPIClientSupport(){
+    public FitbitApiClientSupport(){
         this(null, null);
     }
 
-    FitbitAPIClientSupport(String userId, String password){
+    FitbitApiClientSupport(String userId, String password){
         USE_SSL = Configuration.useSSL();
         setClientVersion(null);
         setClientURL(null);

@@ -44,10 +44,12 @@
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        android:layout_gravity="bottom"
         android:layout_weight="0"
         android:onClick="btnRetrieveData"
-        android:text="Retrieve some data" />
+        android:text="Retrieve Data"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/TextView02"

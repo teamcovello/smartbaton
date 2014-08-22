@@ -32,8 +32,8 @@ public class MainActivity extends Activity {
         final EditText etPIN = (EditText) findViewById(R.id.etPIN);
 
         // Replace these with your own api key and secret
-        String apiKey = "apikey";
-        String apiSecret = "apisecret";
+        String apiKey = "c66f06524a6e4ce1a0e18329542a5173";
+        String apiSecret = "07bfbe756e3344aaae4af689113b8f50";
 
         service = new ServiceBuilder().provider(FitBitActivity.class).apiKey(apiKey)
                 .apiSecret(apiSecret).build();

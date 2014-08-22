@@ -53,7 +53,7 @@ import java.util.*;
 
 
 @SuppressWarnings({"NonPrivateFieldAccessedInSynchronizedContext"})
-public class FitBitApiClientAgent extends FitbitAPIClientSupport implements Serializable {
+public class FitBitApiClientAgent extends FitbitApiClientSupport implements Serializable {
     private static final FitbitApiCredentialsCache DEFAULT_CREDENTIALS_CACHE = new FitbitApiCredentialsCacheMaplmpl();
 
     private static final String DEFAULT_API_BASE_URL = "api.fitbit.com";

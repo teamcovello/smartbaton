@@ -8,6 +8,7 @@ import org.scribe.model.Token;
  * Created by Haider on 8/16/2014.
  */
 public class FitBitActivity extends DefaultApi10a {
+
     private static final String AUTHORIZATION_URL = "http://www.fitbit.com/oauth/authorize?oauth_token=%s";
 
     @Override
