@@ -9,6 +9,7 @@ import android.webkit.WebView;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.json.JSONObject;
 import org.scribe.builder.ServiceBuilder;
 import org.scribe.model.OAuthRequest;
 import org.scribe.model.Response;
@@ -22,21 +23,27 @@ public class MainActivity extends Activity {
 
     OAuthService service;
     Token requestToken;
+    // Replace these with your own api key and secret
+    private String apiKey = "c66f06524a6e4ce1a0e18329542a5173";
+    private String apiSecret = "07bfbe756e3344aaae4af689113b8f50";
+
+    private String accessToken;
+    private String tokenSecret;
+
+    private WebView wvAuthorize;
+    private JSONObject jsonResponse;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final WebView wvAuthorize = (WebView) findViewById(R.id.wvAuthorize);
+        wvAuthorize = (WebView) findViewById(R.id.wvAuthorize);
         final EditText etPIN = (EditText) findViewById(R.id.etPIN);
 
-        // Replace these with your own api key and secret
-        String apiKey = "c66f06524a6e4ce1a0e18329542a5173";
-        String apiSecret = "07bfbe756e3344aaae4af689113b8f50";
-
-        service = new ServiceBuilder().provider(FitBitActivity.class).apiKey(apiKey)
+        service = new ServiceBuilder().provider(FitbitApi.class).apiKey(apiKey)
                 .apiSecret(apiSecret).build();
+
 
         // network operation shouldn't run on main thread
         new Thread(new Runnable() {
@@ -50,6 +57,11 @@ public class MainActivity extends Activity {
                     @Override
                     public void run() {
                         wvAuthorize.loadUrl(authURL);
+
+                        if (accessToken != null) {
+                            wvAuthorize.setVisibility(View.GONE);
+                        }
+
                     }
                 });
             }
@@ -75,11 +87,13 @@ public class MainActivity extends Activity {
                 final Response response = request.send();
                 final TextView tvOutput = (TextView) findViewById(R.id.tvOutput);
 
+
                 // Visual output should run on main thread again...
                 tvOutput.post(new Runnable() {
                     @Override
                     public void run() {
                         tvOutput.setText(response.getBody());
+
                     }
                 });
             }

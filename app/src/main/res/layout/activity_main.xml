@@ -14,13 +14,6 @@
         android:layout_height="fill_parent"
         android:layout_weight="999999" />
 
-    <TextView
-        android:id="@+id/TextView01"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="0"
-        android:text="Once you have pin, paste it in here..." />
 
     <EditText
         android:id="@+id/etPIN"
@@ -31,14 +24,6 @@
 
         <requestFocus />
     </EditText>
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="0"
-        android:text="Then click this..." />
 
     <Button
         android:id="@+id/button1"
@@ -51,19 +36,11 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:id="@+id/TextView02"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="0"
-        android:text="And (hopefully) observe..." />
 
     <TextView
         android:id="@+id/tvOutput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="TextView" />
+        android:layout_weight="1" />
 
 </RelativeLayout>

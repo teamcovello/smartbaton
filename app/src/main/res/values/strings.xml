@@ -3,5 +3,6 @@
 
     <string name="app_name">SmartBaton</string>
     <string name="action_settings">Settings</string>
+    <string name="FitbitCallBackUrl">http://fitbit.com/oauth/callback</string>
 
 </resources>
